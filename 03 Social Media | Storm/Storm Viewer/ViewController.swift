@@ -50,7 +50,7 @@ class ViewController: UITableViewController {
 		// Dispose of any resources that can be recreated.
 	}
 	
-	override func prefersHomeIndicatorAutoHidden() -> Bool {
+	override var prefersHomeIndicatorAutoHidden: Bool {
 		return true
 	}
 }
