@@ -20,14 +20,17 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
   }
   
   // extracts image from dict passed as param, generates file name, jpeg convert, dismiss
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+    guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage else { return }
     
     // UUID generates a Universally Unique ID and is good for a random filename
     let imageName = UUID().uuidString
     let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
     // xxx.write(to: xxx) - write to the dir (80 is quality value 1-100)
-    if let jpegData = UIImageJPEGRepresentation(image, 80) {
+    if let jpegData = image.jpegData(compressionQuality: 80) {
       try? jpegData.write(to: imagePath)
     }
     
@@ -111,3 +114,13 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
   }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
