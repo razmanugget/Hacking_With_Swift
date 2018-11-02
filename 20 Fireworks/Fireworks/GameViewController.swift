@@ -53,7 +53,7 @@ class GameViewController: UIViewController {
         return true
     }
   
-  override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+  override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
     let skView = view as! SKView
     let gameScene = skView.scene as! GameScene
     gameScene.explodeFireworks()
