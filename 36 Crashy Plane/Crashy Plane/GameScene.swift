@@ -240,6 +240,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   
   // MARK: - Override Functions
   override func didMove(to view: SKView) {
+    createPlayer()
+    createSky()
+    createBackground()
+    createGround()
+    createScore()
+    createLogos()
+    
     physicsWorld.gravity = CGVector(dx: 0.0, dy: -5.0)
     physicsWorld.contactDelegate = self
     
@@ -247,13 +254,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       backgroundMusic = SKAudioNode(url: musicURL)
       addChild(backgroundMusic)
     }
-    
-    createLogos()
-    createPlayer()
-    createSky()
-    createBackground()
-    createGround()
-    createScore()
   }
   
   
