@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var scoreLabel: UILabel!
 	
 	@IBAction func submitTapped(_ sender: Any) {
-		if let solutionPosition = solutions.index(of: currentAnswer.text!) {
+		if let solutionPosition = solutions.firstIndex(of: currentAnswer.text!) {
 			activatedButtons.removeAll()
 			
 			var splitAnswers = answersLabel.text!.components(separatedBy: "\n")
