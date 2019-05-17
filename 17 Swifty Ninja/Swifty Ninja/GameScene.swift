@@ -343,7 +343,7 @@ class GameScene: SKScene {
         // add 1 to player's score
         score += 1
         // remove the enemy for activeEnemies array
-        let index = activeEnemies.index(of: node as! SKSpriteNode)!
+        let index = activeEnemies.firstIndex(of: node as! SKSpriteNode)!
         activeEnemies.remove(at: index)
         // play a sound to recognize hit
         run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
@@ -360,7 +360,7 @@ class GameScene: SKScene {
         let seq = SKAction.sequence([group, SKAction.removeFromParent()])
         node.parent?.run(seq)
         
-        let index = activeEnemies.index(of: node.parent as! SKSpriteNode)!
+        let index = activeEnemies.firstIndex(of: node.parent as! SKSpriteNode)!
         activeEnemies.remove(at: index)
         run(SKAction.playSoundFileNamed("explosion.caf", waitForCompletion: false))
         endGame(triggeredByBomb: true)
@@ -407,12 +407,12 @@ class GameScene: SKScene {
             node.name = ""
             subtractLife()
             node.removeFromParent()
-            if let index = activeEnemies.index(of: node) {
+            if let index = activeEnemies.firstIndex(of: node) {
               activeEnemies.remove(at: index)
             }
           } else if node.name == "bombContainer" {
             node.name = ""
-            if let index = activeEnemies.index(of: node) {
+            if let index = activeEnemies.firstIndex(of: node) {
               activeEnemies.remove(at: index)
             }
           }

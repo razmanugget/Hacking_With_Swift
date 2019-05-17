@@ -179,7 +179,7 @@
 				TargetAttributes = {
 					F41A95FE20B40D9D006EDFCF = {
 						CreatedOnToolsVersion = 9.3.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -398,7 +398,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LyfeBug.Swifty-Ninja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -416,7 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LyfeBug.Swifty-Ninja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
