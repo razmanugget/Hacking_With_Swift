@@ -23,8 +23,8 @@ class ViewController: UITableViewController {
   // MARK: - IBActions
   // MARK: - Functions
   func makeAttributedString(title: String, subtitle: String) -> NSAttributedString {
-    let titleAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .headline), NSAttributedStringKey.foregroundColor: UIColor.purple]
-    let subtitleAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .subheadline)]
+    let titleAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline), NSAttributedString.Key.foregroundColor: UIColor.purple]
+    let subtitleAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline)]
     let titleString = NSMutableAttributedString(string: "\(title)\n", attributes: titleAttributes)
     let subtitleString = NSAttributedString(string: subtitle, attributes: subtitleAttributes)
     titleString.append(subtitleString)
@@ -95,12 +95,12 @@ class ViewController: UITableViewController {
   }
   
   
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .insert {
       favorites.append(indexPath.row)
       index(item: indexPath.row)
     } else {
-      if let index = favorites.index(of: indexPath.row) {
+      if let index = favorites.firstIndex(of: indexPath.row) {
         favorites.remove(at: index)
         deindex(item: indexPath.row)
       }
@@ -117,7 +117,7 @@ class ViewController: UITableViewController {
   }
   
   
-  override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+  override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
     if favorites.contains(indexPath.row) {
       return .delete
     } else {
