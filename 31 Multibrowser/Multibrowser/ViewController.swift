@@ -78,7 +78,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate, 
   @objc func deleteWebView() {
     // safely unwrap our webview
     if let webView = activeWebView {
-      if let index = stackView.arrangedSubviews.index(of: webView) {
+      if let index = stackView.arrangedSubviews.firstIndex(of: webView) {
         // found the current webview in the stack view and remove
         stackView.removeArrangedSubview(webView)
         // now remove it from the view hierarchy - important!!!!  otherwise = mem leak
