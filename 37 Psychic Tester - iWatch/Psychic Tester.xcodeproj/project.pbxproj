@@ -228,14 +228,14 @@
 				TargetAttributes = {
 					F481A53320E5031C00307F1A = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					F481A54520E5032000307F1A = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 					F481A55420E5032300307F1A = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -483,7 +483,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
@@ -505,7 +505,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
@@ -562,7 +562,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LyfeBug.Psychic-Tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -580,7 +580,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LyfeBug.Psychic-Tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
